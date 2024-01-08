@@ -18,7 +18,7 @@ requirements:
   host:
     - python >=3.7
     - hatchling
-    - hatch-jupyter-builder
+    - hatch-jupyter-builder >=0.5.0
     - pip
     - nodejs
   run:
