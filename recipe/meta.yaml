@@ -10,18 +10,20 @@ source:
   sha256: 9993f90f6a0ae6f9d2f084ecf607367f00d23db112aaa12bb4ef874a1d46d742
 
 build:
-  noarch: python
   script: hatch build
   number: 0
 
 requirements:
+  build:
+    - python
+    - hatchling
   host:
-    - python >=3.7
+    - python
     - hatchling
     - hatch-jupyter-builder
     - pip
   run:
-    - python >=3.7
+    - python
     - anywidget
 
 test:
