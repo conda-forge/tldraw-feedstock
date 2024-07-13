@@ -1,5 +1,5 @@
 {% set name = "tldraw" %}
-{% set version = "2.0.2" %}
+{% set version = "2.2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tldraw-{{ version }}.tar.gz
-  sha256: 982bedb56ae6cec150fb95853a4a9f9fa4c15eb3ed8e131292cb3753f58c90e6
+  sha256: 3de15f4f134712a7222c82faa129c32ab55f5ecb10582ca57b84ea318572b2b5
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script:
+   - rm -rf node_modules
+   - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
@@ -20,9 +22,13 @@ requirements:
     - hatchling
     - hatch-jupyter-builder
     - pip
+    - nodejs
   run:
     - python >=3.7
     - anywidget
+    - requests
+    - ipylab
+    - ipykernel
 
 test:
   imports:
