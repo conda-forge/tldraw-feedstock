@@ -1,5 +1,5 @@
 {% set name = "tldraw" %}
-{% set version = "2.4.6" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tldraw-{{ version }}.tar.gz
-  sha256: a9cb422fa34bdaf00c93c51ac762c7d2278cdb13bd7b1428d4b2ecf19032f6e6
+  sha256: 80b7f80fce79b5bc9e1f4260581d72ec69e8245b8eaace193259629f32189c78
 
 build:
   noarch: python
