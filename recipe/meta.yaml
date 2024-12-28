@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tldraw-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tldraw-{{ version }}.tar.gz
   sha256: 80b7f80fce79b5bc9e1f4260581d72ec69e8245b8eaace193259629f32189c78
 
 build:
@@ -14,17 +14,17 @@ build:
   script:
     - rm -rf node_modules
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - hatchling
     - hatch-jupyter-builder
     - pip
     - nodejs
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - anywidget
     - requests
     - ipylab
@@ -37,6 +37,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/kolibril13/jupyter-tldraw
