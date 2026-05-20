@@ -1,5 +1,6 @@
 {% set name = "tldraw" %}
 {% set version = "5.0.0" %}
+{% set python_min = "3.13" %}
 
 package:
   name: {{ name|lower }}
