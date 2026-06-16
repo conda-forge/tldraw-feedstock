@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: tldraw
-  version: "5.0.0"
+  version: "5.1.1"
   python_min: "3.13"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/tldraw-${{ version }}.tar.gz
-  sha256: 3198ba6b02930373678573c2393f56f0907ce165adbf07690dc684d88670e88e
+  sha256: d964142b8bca3b6aed2358338105bacb7e580509764998dee6e1ce5e000643e8
 
 build:
   number: 0
