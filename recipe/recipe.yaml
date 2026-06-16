@@ -30,9 +30,8 @@ requirements:
   run:
     - python >=${{ python_min }}
     - anywidget
-    - requests
-    - ipylab
     - ipykernel
+    - marimo >=0.23.8
 
 tests:
   - python:
